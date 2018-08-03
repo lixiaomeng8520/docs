@@ -1,20 +1,15 @@
-.. docs documentation master file, created by
-   sphinx-quickstart on Fri Aug  3 14:27:06 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+lxm的文档
+---------
 
-Welcome to docs's documentation!
-================================
+这是lxm的文档，经常更新，经常查看~
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+* `Read the Docs文档 <https://docs.readthedocs.io/en/latest/getting_started.html>`_
+* `sphinx中文文档 <http://zh-sphinx-doc.readthedocs.io/en/latest/contents.html>`_
+* `sphinx英文文档 <http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
 
+linux
+""""""
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+* :doc:`linux/mirror`
+* :doc:`linux/install-os`
+* :doc:`linux/command`
