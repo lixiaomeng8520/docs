@@ -1,13 +1,7 @@
 lxm的文档
 =========
 
-关于本文档的文档~
-
-* `Read the Docs 文档 <https://docs.readthedocs.io/en/latest/getting_started.html>`_
-* `sphinx 英文文档 <http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
-* `sphinx 中文文档 <http://zh-sphinx-doc.readthedocs.io/en/latest/contents.html>`_
-* `PHP 示例 <http://phpword.readthedocs.io/en/latest/index.html>`_
-* `pygment <http://pygments.org/>`_
+总结所学知识点，要做到精简，能够用到。不需要长篇大论。
 
 目录
 ^^^^
@@ -20,6 +14,15 @@ lxm的文档
     linux/install-os
     linux/command
     linux/iptables
+    linux/sphinx
+
+.. toctree::
+    :maxdepth: 2
+    :caption: PHP
+
+    php/resource
+    
+    
 
 table模板
 
@@ -38,3 +41,7 @@ table模板
 +----------------------------+----------------------------------------------------------------+
 |                            |                                                                |
 +----------------------------+----------------------------------------------------------------+
+
+链接模板
+
+` <>`_
