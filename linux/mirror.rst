@@ -1,15 +1,15 @@
 镜像和仓库
-----------
+==========
 
 国内镜像
-^^^^^^^^
+--------
 
-* `阿里巴巴 <https://opsx.alibaba.com/mirror>`_
 * `清华大学开源软件镜像站 <https://mirrors.tuna.tsinghua.edu.cn/>`_
+* `阿里巴巴 OPSX 软件仓库 <https://opsx.alibaba.com/mirror>`_
 * `科大开源镜像站 <http://mirrors.ustc.edu.cn/>`_
 
 一些仓库
-^^^^^^^^^
+--------
 
 centos
 
@@ -37,7 +37,9 @@ centos
     gpgkey=https://mirrors.tuna.tsinghua.edu.cn/centos/RPM-GPG-KEY-CentOS-7
     EOF
 
-epel::
+epel
+
+.. code-block:: bash
 
     cat > /etc/yum.repos.d/epel.repo <<EOF
     [epel]
@@ -48,7 +50,9 @@ epel::
     gpgkey=https://mirrors.tuna.tsinghua.edu.cn/epel/RPM-GPG-KEY-EPEL-7
     EOF
 
-ius::
+ius
+
+.. code-block:: bash
 
     cat > /etc/yum.repos.d/ius.repo <<EOF
     [ius-stable]
@@ -59,7 +63,9 @@ ius::
     gpgkey=https://mirrors.tuna.tsinghua.edu.cn/ius/IUS-COMMUNITY-GPG-KEY
     EOF
 
-docker::
+docker
+
+.. code-block:: bash
 
     cat > /etc/yum.repos.d/docker.repo <<EOF
     [docker-ce-stable]
@@ -70,7 +76,9 @@ docker::
     gpgkey=https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/gpg
     EOF
 
-mongodb::
+mongodb
+
+.. code-block:: bash
 
     cat > /etc/yum.repos.d/mongodb.repo <<EOF
     [mongodb-org]
