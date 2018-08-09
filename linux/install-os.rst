@@ -111,7 +111,7 @@
     cp /mnt/images/pxeboot/initrd.img /var/tftp/centos7/
 
 4. 安装vsftpd,提供安装时包下载
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 安装vsftpd
 
