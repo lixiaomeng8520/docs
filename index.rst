@@ -7,24 +7,36 @@ lxm的文档
 ^^^^
 
 .. toctree::
-    :maxdepth: 2
-    :caption: Linux
+    :maxdepth: 1
+    :caption: LINUX
 
     linux/mirror
-    linux/install-os
+    linux/install
     linux/command
     linux/iptables
     linux/sphinx
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
+    :caption: GIT
+
+    git/command
+
+.. toctree::
+    :maxdepth: 1
     :caption: PHP
 
     php/resource
-    
-    
 
+.. toctree::
+    :maxdepth: 1
+    :caption: DOCKER
+
+    docker/install
+    docker/swarm
+    
 table模板
+^^^^^^^^^
 
 +----------------------------+----------------------------------------------------------------+
 | 描述                       | 命令                                                           |
