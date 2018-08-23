@@ -16,6 +16,7 @@ lxm的文档
     linux/iptables
     linux/sphinx
     linux/oracle
+    linux/vsftpd
 
 .. toctree::
     :maxdepth: 1
