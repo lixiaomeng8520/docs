@@ -7,3 +7,15 @@ sphinx
 * `PHP 示例 <http://phpword.readthedocs.io/en/latest/index.html>`_
 * `pygment <http://pygments.org/>`_
 * `如何用 ReadtheDocs、Sphinx 快速搭建写书环境 <https://www.jianshu.com/p/78e9e1b8553a>`_
+
+生成
+
+.. code-block:: bash
+
+    make html
+
+自动生成
+
+.. code-block:: bash
+
+    sphinx-autobuild -H 0.0.0.0 -p 8000 . _build/html/
