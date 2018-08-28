@@ -8,8 +8,8 @@
 * `阿里巴巴 OPSX 软件仓库 <https://opsx.alibaba.com/mirror>`_
 * `科大开源镜像站 <http://mirrors.ustc.edu.cn/>`_
 
-一些仓库
---------
+Centos
+------
 
 centos
 
@@ -86,4 +86,22 @@ mongodb
     baseurl=https://mirrors.tuna.tsinghua.edu.cn/mongodb/yum/el7/
     gpgcheck=0
     enabled=1
+    EOF
+
+Debian
+------
+
+debian
+
+.. code-block:: bash
+
+    cat > /etc/apt/sources.list <<EOF
+    deb http://mirrors.163.com/debian/ jessie main non-free contrib
+    deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib
+    deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib
+    deb-src http://mirrors.163.com/debian/ jessie main non-free contrib
+    deb-src http://mirrors.163.com/debian/ jessie-updates main non-free contrib
+    deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib
+    deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib
+    deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib
     EOF
