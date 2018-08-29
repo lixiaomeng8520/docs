@@ -8,40 +8,17 @@ lxm的文档
 
 .. toctree::
     :maxdepth: 1
-    :caption: LINUX
 
-    linux/mirror
-    linux/install
-    linux/command
-    linux/iptables
-    linux/sphinx
-    linux/oracle
-    linux/vsftpd
-
-.. toctree::
-    :maxdepth: 1
-    :caption: GIT
-
-    git/command
-
-.. toctree::
-    :maxdepth: 1
-    :caption: PHP
-
-    php/resource
-
-.. toctree::
-    :maxdepth: 1
-    :caption: DOCKER
-
-    docker/install
-    docker/swarm
-
-.. toctree::
-    :maxdepth: 1
-    :caption: security
-
-    security/note
+    source/installCentos7
+    source/linux
+    source/iptables
+    source/sphinx
+    source/oracle
+    source/vsftpd
+    source/git
+    source/php
+    source/docker
+    source/security
     
 table模板
 ^^^^^^^^^

@@ -1,4 +1,4 @@
-sphinx
+Sphinx
 ======
 
 * `Read the Docs 文档 <https://docs.readthedocs.io/en/latest/getting_started.html>`_
