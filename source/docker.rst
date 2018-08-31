@@ -119,3 +119,55 @@ UI
 +----------------------------+--------------------------------------------------------------------------------------------+
 | 升级服务                   | docker service update --image redis:3.0.7 redis                                            |
 +----------------------------+--------------------------------------------------------------------------------------------+
+
+Logs
+----
+
+资料
+
+* `View logs for a container or service <https://docs.docker.com/config/containers/logging/>`_
+* https://stackoverflow.com/questions/40030555/docker-gelf-driver-env-option
+
+使用gelf驱动转存到logstash
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+logstash开启gelf 12201端口
+
+.. code-block:: bash
+
+    gelf {
+        port => 12201
+    }
+
+run
+
+.. code-block:: bash
+
+    docker run -d --name tomcat --log-driver gelf --log-opt gelf-address=udp://192.168.1.2:12201 --log-opt labels=mhost,lname --label mhost=192.168.1.1 --label lname=test tomcat:8.5.32
+
+compose
+
+.. code-block:: bash
+
+    version: '3'
+   
+    services:
+        yanyu-server:
+            image: tomcat:8.5.32
+            labels:
+                mhost: 192.168.1.1
+                lname: test
+            logging:
+                driver: gelf
+                options:
+                    gelf-address: udp://192.168.1.2:12201
+                    labels: mhost,lname
+
+
+Compose
+-------
+
+资料
+
+* `Compose file version 3 reference <https://docs.docker.com/compose/compose-file/>`_
+
