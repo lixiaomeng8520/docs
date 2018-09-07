@@ -19,9 +19,10 @@ lxm的文档
     source/php
     source/docker
     source/security
+    source/network
+    source/samba
     
 table模板
-^^^^^^^^^
 
 +----------------------------+----------------------------------------------------------------+
 | 描述                       | 命令                                                           |

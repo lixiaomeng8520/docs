@@ -9,7 +9,14 @@ Iptables
 数据包流向
 ----------
 
-.. image:: iptables-1.png
+.. image:: attach/iptables-1.png
+
+安装服务
+--------
+
+.. code-block:: bash
+
+    yum install -y iptables-services
 
 命令
 ----
