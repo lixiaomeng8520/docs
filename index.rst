@@ -22,6 +22,7 @@ lxm的文档
     source/network
     source/samba
     source/time
+    source/nginx
     
 table模板
 
