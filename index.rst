@@ -23,6 +23,7 @@ lxm的文档
     source/samba
     source/time
     source/nginx
+    source/sqlserver
     
 table模板
 
