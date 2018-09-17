@@ -9,3 +9,5 @@ Sqlserver
     
     exec sp_attach_db 'hnfl','/tmp/hnfl/hnfl_db.mdf','/tmp/hnfl/hnfl_db_log.LDF';
     go;
+
+Linux下连接sqlserver：freetds
