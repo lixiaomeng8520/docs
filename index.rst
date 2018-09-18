@@ -24,6 +24,7 @@ lxm的文档
     source/time
     source/nginx
     source/sqlserver
+    source/mysql
     
 table模板
 
