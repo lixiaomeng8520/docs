@@ -167,7 +167,54 @@ compose
 Compose
 -------
 
-资料
-
 * `Compose file version 3 reference <https://docs.docker.com/compose/compose-file/>`_
 
+2种特殊挂载
+^^^^^^^^^^^
+
+描述
+
++-----------+----------------------------------------------------------------+
+| 配置      | 默认挂载路径                                                   |
++===========+================================================================+
+| configs   | /<config_name>                                                 |
++-----------+----------------------------------------------------------------+
+| secrets   | /run/secrets/<secret_name>                                     |
++-----------+----------------------------------------------------------------+
+
+语法
+
+.. code-block:: bash
+
+    services:
+        redis:
+            configs:
+                - source:redis_config
+                - target:/etc/redis.config
+    
+    configs:
+        redis_config
+            file: ./redis.config
+
+Registry
+--------
+
+* `Docker Registry <https://docs.docker.com/registry/>`_
+* `mortensteenrasmussen/docker-registry-manifest-cleanup <https://github.com/mortensteenrasmussen/docker-registry-manifest-cleanup>`_
+  
+清理未tagged的manifest
+^^^^^^^^^^^^^^^^^^^^^^
+
+1. 执行API逻辑删除manifest
+   
+.. code-block:: bash
+
+    docker pull mortensrasmussen/docker-registry-manifest-cleanup
+
+    docker run -it --rm --net host -v /sda/docker/registry:/registry -e REGISTRY_URL=https://user:pass@reg1.dahe.cn [-e DRY_RUN=true] mortensrasmussen/docker-registry-manifest-cleanup
+
+2. 在registry container里执行garbage-collect
+   
+.. code-block:: bash
+
+    registry garbage-collect [-d] /etc/docker/registry/config.yml
