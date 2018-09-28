@@ -190,7 +190,7 @@ Compose
         redis:
             configs:
                 - source:redis_config
-                - target:/etc/redis.config
+                  target:/etc/redis.config
     
     configs:
         redis_config
@@ -199,8 +199,9 @@ Compose
 Registry
 --------
 
-* `Docker Registry <https://docs.docker.com/registry/>`_
+* `Configuring a registry <https://docs.docker.com/registry/configuration/>`_
 * `mortensteenrasmussen/docker-registry-manifest-cleanup <https://github.com/mortensteenrasmussen/docker-registry-manifest-cleanup>`_
+* `Authenticate proxy with nginx <https://docs.docker.com/registry/recipes/nginx/>`_
   
 清理未tagged的manifest
 ^^^^^^^^^^^^^^^^^^^^^^
