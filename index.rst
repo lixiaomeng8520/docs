@@ -25,6 +25,7 @@ lxm的文档
     source/nginx
     source/sqlserver
     source/mysql
+    source/logrotate
     
 table模板
 
