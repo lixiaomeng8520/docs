@@ -17,7 +17,6 @@ lxm的文档
     source/vsftpd
     source/git
     source/php
-    source/docker
     source/security
     source/network
     source/samba
@@ -26,6 +25,8 @@ lxm的文档
     source/sqlserver
     source/mysql
     source/logrotate
+    source/docker
+    source/kubernetes
     
 table模板
 
