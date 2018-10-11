@@ -5,6 +5,7 @@ Iptables
 
 * `linux平台下防火墙iptables原理(转)​ <http://www.cnblogs.com/ggjucheng/archive/2012/08/19/2646466.html>`_
 * `25个iptables常用示例​ <https://www.cnblogs.com/bill1015/p/6847841.html>`_
+* `Linux系统的ECS配置SNAT代理网关 <https://help.aliyun.com/knowledge_detail/38776.html>`_
 
 
 数据包流向
@@ -61,25 +62,35 @@ nat表
 开启NAT步骤
 -----------
 
-设置内网主机默认网关
+1. 设置内网主机默认网关
 
-网关开启路由转发
+2. 网关开启路由转发
 
 .. code-block:: bash
-
+    
+    # 临时
     echo 1 > /proc/sys/net/ipv4/ip_forward
+    # 永久
+    vim /etc/sysctl.conf
+    net.ipv4.ip_forward = 1
+    sysctl –p
 
-网关filter表forward链打开
+3. 网关filter表forward链打开
 
 .. code-block:: bash
 
     iptables -P FORWARD ACCEPT
+    # or
+    iptables -t filter -A FORWARD -s 192.168.56.20/24 -j ACCEPT
 
-网关设置nat规则
+
+4. 网关设置nat规则
 
 .. code-block:: bash
 
     iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+    # or
+    iptables -t nat -A POSTROUTING -s 192.168.56.20/24 -j SNAT --to-source 10.0.2.15
 
 关于iptables-services
 ---------------------
