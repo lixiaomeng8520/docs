@@ -14,4 +14,4 @@ kubectl get deployments
   
 * ` <https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882>`_
 * `三小时攻克 Kubernetes！ <https://mp.weixin.qq.com/s/gLbfwS89cpAkkoVMzJc6sQ>`_
-
+* `官网Setup <https://kubernetes.io/docs/setup/>`_

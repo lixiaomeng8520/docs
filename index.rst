@@ -9,22 +9,23 @@ lxm的文档
 .. toctree::
     :maxdepth: 1
 
-    source/installCentos7
+    source/network
     source/linux
+    source/installCentos7
     source/iptables
-    source/sphinx
-    source/oracle
+    source/systemd
     source/vsftpd
+    source/samba
+    source/logrotate
+    source/time
+    source/sphinx
+    source/nginx   
     source/git
     source/php
-    source/security
-    source/network
-    source/samba
-    source/time
-    source/nginx
-    source/sqlserver
+    source/security   
     source/mysql
-    source/logrotate
+    source/oracle
+    source/sqlserver
     source/docker
     source/kubernetes
     

@@ -6,17 +6,11 @@ Iptables
 * `linux平台下防火墙iptables原理(转)​ <http://www.cnblogs.com/ggjucheng/archive/2012/08/19/2646466.html>`_
 * `25个iptables常用示例​ <https://www.cnblogs.com/bill1015/p/6847841.html>`_
 
+
 数据包流向
 ----------
 
 .. image:: attach/iptables-1.png
-
-安装服务
---------
-
-.. code-block:: bash
-
-    yum install -y iptables-services
 
 命令
 ----
@@ -86,3 +80,15 @@ nat表
 .. code-block:: bash
 
     iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+关于iptables-services
+---------------------
+
+使用iptables命令可以直接生效，但是如果系统重启，则不会自动加载上次的配置，所以要安装iptables-services，自动加载配置文件。
+
+.. code-block:: bash
+
+    yum install -y iptables-services
+
+    systemctl enable iptables
+    systemctl start iptables
