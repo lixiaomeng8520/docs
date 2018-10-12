@@ -3,6 +3,8 @@ Docker
 
 容器技术
 
+* `dockerd <https://docs.docker.com/engine/reference/commandline/dockerd/>`_
+
 安装
 ----
 
