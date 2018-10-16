@@ -154,27 +154,33 @@ worker
 部署应用
 ^^^^^^^^
 
-部署
-
-* kubectl run NAME --image=image [--env="key=value"] [--port=port] [--replicas=replicas] [--dry-run=bool] [--overrides=inline-json] [--command] -- [COMMAND] [args...]
-* kubectl get [(-o|--output=)json|yaml|wide|custom-columns=...|custom-columns-file=...|go-template=...|go-template-file=...|jsonpath=...|jsonpath-file=...] (TYPE[.VERSION][.GROUP] [NAME | -l label] | TYPE[.VERSION][.GROUP]/NAME ...) [flags]
-* kubectl expose (-f FILENAME | TYPE NAME) [--port=port] [--protocol=TCP|UDP|SCTP] [--target-port=number-or-name] [--name=name] [--external-ip=external-ip-of-service] [--type=type]
-* kubectl delete ([-f FILENAME] | TYPE [(NAME | -l label | --all)])
-* kubectl scale [--resource-version=version] [--current-replicas=count] --replicas=COUNT (-f FILENAME | TYPE NAME)
+语法
 
 .. code-block:: bash
 
-    kubectl run nginx --replicas=3 --labels='app=nginx' --image=nginx:1.10 --port=80
+    kubectl run NAME --image=image [--env="key=value"] [--port=port] [--replicas=replicas] [--dry-run=bool] [--overrides=inline-json] [--command] -- [COMMAND] [args...]
+    kubectl get [(-o|--output=)json|yaml|wide|custom-columns=...|custom-columns-file=...|go-template=...|go-template-file=...|jsonpath=...|jsonpath-file=...] (TYPE[.VERSION][.GROUP] [NAME | -l label] | TYPE[.VERSION][.GROUP]/NAME ...) [flags]
+    kubectl expose (-f FILENAME | TYPE NAME) [--port=port] [--protocol=TCP|UDP|SCTP] [--target-port=number-or-name] [--name=name] [--external-ip=external-ip-of-service] [--type=type]
+    kubectl delete ([-f FILENAME] | TYPE [(NAME | -l label | --all)])
+    kubectl scale [--resource-version=version] [--current-replicas=count] --replicas=COUNT (-f FILENAME | TYPE NAME)
 
-    kubectl get [pods | pod | po] NAME
-    kubectl get pods -l app
-    kubectl get pods -l app=nginx
-    kubectl get pods -l app=nginx -o wide
-    kubectl describe pods nginx
+实例
 
-    kubectl get [deployments | deploy]
-    kubectl describe deployments nginx
+.. code-block:: bash
 
-    kubectl expose deploy nginx --port=8088 --target-port=80 --name=nginx-svc
+    kubectl run hello --image jocatalin/kubernetes-bootcamp:v1 --replicas 1 --labels 'app=hello'
 
-    kubectl get svc nginx
+    kubectl get
+
+    kubectl describe
+    
+    kubectl delete
+
+    kubectl logs $POD_NAME
+
+    kubectl exec -it $POD_NAME bash
+
+    kubectl scale deployments hello --replicas=4
+
+    kubectl expose deploy hello --port 8080 --name=hello-svc
+
