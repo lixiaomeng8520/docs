@@ -2,6 +2,7 @@ Logrotate
 =========
 
 * `man page <http://man7.org/linux/man-pages/man8/logrotate.8.html>`_
+* `Nginx日志切割之Logrotate篇 <https://blog.csdn.net/forthemyth/article/details/44062529>`_
 
 手动执行
 --------

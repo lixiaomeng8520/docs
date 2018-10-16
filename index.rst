@@ -28,6 +28,7 @@ lxm的文档
     source/sqlserver
     source/docker
     source/kubernetes
+    source/elk
     
 table模板
 

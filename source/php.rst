@@ -11,11 +11,13 @@ PHP
 * `Packagist中国镜像 <https://packagist.laravel-china.org/>`_
 * `Aura for PHP <http://auraphp.com/>`_
 * `Slim <https://www.slimframework.com/>`_
+* `REST API Handbook <https://developer.wordpress.org/rest-api/>`_
 
 知识点
 ------
 
-`​PHP 7 错误处理​ <http://php.net/manual/zh/language.errors.php7.php>`_
+* `​PHP 7 错误处理​ <http://php.net/manual/zh/language.errors.php7.php>`_
+* `PSR-7 Objects Are Not Immutable <http://andrew.carterlunn.co.uk/programming/2016/05/22/psr-7-is-not-immutable.html>`_
   
 Packagist常用软件包
 -------------------

@@ -6,7 +6,13 @@ Kubernetes
 * `官网Setup <https://kubernetes.io/docs/setup/>`_
 * `kubeadm 部署 kube1.10 <https://blog.csdn.net/golduty2/article/details/80700491>`_
 * `kubectl-commands <https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands>`_
-* `官方官方入门教程 <https://blog.csdn.net/kikajack/article/details/79866006>`_
+* `官方入门教程 <https://blog.csdn.net/kikajack/article/details/79866006>`_
+* `十分钟带你理解Kubernetes核心概念 <http://www.dockone.io/article/932>`_
+* `RKE快速上手指南：开源的轻量级K8S安装程序 <https://segmentfault.com/a/1190000012288926>`_
+* `Kubernetes中文手册 <https://www.kubernetes.org.cn/docs>`_
+* `如何在Kubernetes中暴露服务访问 <https://segmentfault.com/a/1190000007990723>`_
+* `kubernetes入门命令行操作（实例演示） <www.360doc.com/content/18/0225/21/11935121_732436265.shtml>`_
+* `Kubernetes核心概念总结 <https://www.cnblogs.com/zhenyuyaodidiao/p/6500720.html>`_
 
 
 安装
@@ -144,3 +150,31 @@ worker
     kubectl drain master --delete-local-data --force --ignore-daemonsets
     kubectl delete node master
     kubeadm reset
+
+部署应用
+^^^^^^^^
+
+部署
+
+* kubectl run NAME --image=image [--env="key=value"] [--port=port] [--replicas=replicas] [--dry-run=bool] [--overrides=inline-json] [--command] -- [COMMAND] [args...]
+* kubectl get [(-o|--output=)json|yaml|wide|custom-columns=...|custom-columns-file=...|go-template=...|go-template-file=...|jsonpath=...|jsonpath-file=...] (TYPE[.VERSION][.GROUP] [NAME | -l label] | TYPE[.VERSION][.GROUP]/NAME ...) [flags]
+* kubectl expose (-f FILENAME | TYPE NAME) [--port=port] [--protocol=TCP|UDP|SCTP] [--target-port=number-or-name] [--name=name] [--external-ip=external-ip-of-service] [--type=type]
+* kubectl delete ([-f FILENAME] | TYPE [(NAME | -l label | --all)])
+* kubectl scale [--resource-version=version] [--current-replicas=count] --replicas=COUNT (-f FILENAME | TYPE NAME)
+
+.. code-block:: bash
+
+    kubectl run nginx --replicas=3 --labels='app=nginx' --image=nginx:1.10 --port=80
+
+    kubectl get [pods | pod | po] NAME
+    kubectl get pods -l app
+    kubectl get pods -l app=nginx
+    kubectl get pods -l app=nginx -o wide
+    kubectl describe pods nginx
+
+    kubectl get [deployments | deploy]
+    kubectl describe deployments nginx
+
+    kubectl expose deploy nginx --port=8088 --target-port=80 --name=nginx-svc
+
+    kubectl get svc nginx

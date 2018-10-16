@@ -4,6 +4,9 @@ Docker
 容器技术
 
 * `dockerd <https://docs.docker.com/engine/reference/commandline/dockerd/>`_
+* `https://docs.docker.com/compose/startup-order/ <https://docs.docker.com/compose/startup-order/>`_
+* `控制docker-compose中服务的启动顺序 <https://blog.csdn.net/xiao_jun_0820/article/details/78676765>`_
+* `你的Docker镜像仓库占用了多少空间？删除镜像与空间回收 <https://zhuanlan.zhihu.com/p/33324217>`_
 
 安装
 ----
@@ -204,6 +207,7 @@ Registry
 * `Configuring a registry <https://docs.docker.com/registry/configuration/>`_
 * `mortensteenrasmussen/docker-registry-manifest-cleanup <https://github.com/mortensteenrasmussen/docker-registry-manifest-cleanup>`_
 * `Authenticate proxy with nginx <https://docs.docker.com/registry/recipes/nginx/>`_
+* `Docker Registry镜像清理问题 <https://ningyu1.github.io/site/post/46-docker-registry/>`_
   
 清理未tagged的manifest
 ^^^^^^^^^^^^^^^^^^^^^^

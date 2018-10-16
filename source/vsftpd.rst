@@ -1,6 +1,8 @@
 Vsftpd
 ======
 
+* `vsftpd配置虚拟用户为登录用户 <https://blog.csdn.net/zhangpfly/article/details/73160346>`_
+
 vsftpd默认使用系统用户，这里先讨论系统用户的情况，以后再说虚拟用户
 
 步骤
