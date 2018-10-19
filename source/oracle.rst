@@ -1,6 +1,20 @@
 Oracle
 ======
 
+镜像
+----
+
+registry.aliyuncs.com/helowin/oracle_11g
+
+* `阿里云oracle镜像 <https://dev.aliyun.com/detail.html?spm=5176.1972343.2.2.32595aaaLv6M2v&repoId=1969>`_
+  
+环境变量
+--------
+
+.. code-block:: bash
+
+    source /home/oracle/.bash_profile
+
 登录
 ----
 
@@ -26,6 +40,8 @@ Oracle
 
 导入dmp
 -------
+
+shell
 
 .. code-block:: bash
 

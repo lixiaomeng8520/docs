@@ -357,7 +357,8 @@ nmcli
 ln
 ^^
 
-参考：`5分钟让你明白“软链接”和“硬链接”的区别 <https://www.jianshu.com/p/dde6a01c4094>`_
+* `5分钟让你明白“软链接”和“硬链接”的区别 <https://www.jianshu.com/p/dde6a01c4094>`_
+* `纠结的链接：ln、ln -s、fs.symlink、require <http://taobaofed.org/blog/2016/07/29/puzzled-by-link/>`_
 
 .. note::
 
