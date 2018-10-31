@@ -499,85 +499,16 @@ shell
 
 * `Shell 流程控制 <http://www.runoob.com/linux/linux-shell-process-control.html>`_
 
-if
+SIGQUIT, SIGTERM, SIGINT, SIGKILL
+---------------------------------
 
-.. code-block:: bash
+1. SIGINT SIGTERM区别
 
-    if condition
-    then
-        command1 
-        command2
-        ...
-        commandN 
-    fi
+前者与字符ctrl+c关联，后者没有任何控制字符关联。
 
-if else
+前者只能结束前台进程，后者则不是。
 
-.. code-block:: bash
+2. SIGTERM SIGKILL的区别
 
-    if condition
-    then
-        command1 
-        command2
-        ...
-        commandN
-    else
-        command
-    fi
+前者可以被阻塞、处理和忽略，但是后者不可以。KILL命令的默认不带参数发送的信号就是SIGTERM.让程序有好的退出。因为它可以被阻塞，所以有的进程不能被结束时，用kill发送后者信号，即可。即：kill -9 进程号。
 
-if else-if else
-
-.. code-block:: bash
-
-    if condition1
-    then
-        command1
-    elif condition2 
-    then 
-        command2
-    else
-        commandN
-    fi
-
-for
-
-.. code-block:: bash
-
-    for var in item1 item2 ... itemN
-    do
-        command1
-        command2
-        ...
-        commandN
-    done
-
-    # oneline
-    for var in item1 item2 ... itemN; do command1; command2… done;
-
-while
-
-.. code-block:: bash
-
-    while condition
-    do
-        command
-    done
-
-case
-
-.. code-block:: bash
-
-    case 值 in
-    模式1)
-        command1
-        command2
-        ...
-        commandN
-        ;;
-    模式2）
-        command1
-        command2
-        ...
-        commandN
-        ;;
-    esac

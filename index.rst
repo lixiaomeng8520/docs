@@ -29,6 +29,7 @@ lxm的文档
     source/docker
     source/kubernetes
     source/elk
+    source/supervisor
     
 table模板
 
