@@ -13,7 +13,11 @@ Kubernetes
 * `如何在Kubernetes中暴露服务访问 <https://segmentfault.com/a/1190000007990723>`_
 * `kubernetes入门命令行操作（实例演示） <www.360doc.com/content/18/0225/21/11935121_732436265.shtml>`_
 * `Kubernetes核心概念总结 <https://www.cnblogs.com/zhenyuyaodidiao/p/6500720.html>`_
-
+* `从零开始搭建Kubernetes集群（一、开篇） <https://www.jianshu.com/p/78a5afd0c597>`_
+* `Web UI (Dashboard) <https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/>`_
+* `NGINX Ingress Controller <https://kubernetes.github.io/ingress-nginx/>`_
+* `Kubernetes Nginx Ingress 教程 <https://mritd.me/2017/03/04/how-to-use-nginx-ingress/?utm_source=tuicool&utm_medium=referral>`_
+* `Concepts <https://kubernetes.io/docs/concepts/>`_
 
 安装
 ----

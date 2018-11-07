@@ -3,6 +3,8 @@ lxm的文档
 
 总结所学知识点，要做到精简，能够用到。不需要长篇大论。
 
+https://stackoverflow.com/questions/13348480/how-to-upload-file-from-command-line-as-file-parameter-in-jenkins
+
 目录
 ^^^^
 

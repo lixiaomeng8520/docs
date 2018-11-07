@@ -116,3 +116,26 @@ git checkout commit -- file = git reset --hard commit -- file （可惜不存在
 +--------------------------------+-----------------+-------------------+-----------+
 | git checkout commit -- [file]  |       1         |       **1**       |           |
 +--------------------------------+-----------------+-------------------+-----------+
+
+拉取远程分支
+------------
+
+查看分支
+
+.. code-block:: bash
+
+    git branch -vv
+    git branch -r
+
+方法一(创建并切换):
+
+.. code-block:: bash
+
+    git checkout -b dev origin/dev
+
+方法二(先创建后切换):
+
+.. code-block:: bash
+
+    git fetch origin dev:dev
+    git checkout dev
