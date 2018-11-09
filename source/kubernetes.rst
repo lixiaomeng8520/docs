@@ -13,6 +13,7 @@ Kubernetes
 
 第三方参考
 
+* `Kubernetes指南 <https://kubernetes.feisky.xyz/>`_
 * `Learn Kubernetes in Under 3 Hours: A Detailed Guide to Orchestrating Containers <https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882>`_
 * `三小时攻克 Kubernetes！ <https://mp.weixin.qq.com/s/gLbfwS89cpAkkoVMzJc6sQ>`_
 * `kubeadm 部署 kube1.10 <https://blog.csdn.net/golduty2/article/details/80700491>`_
@@ -24,6 +25,8 @@ Kubernetes
 * `从零开始搭建Kubernetes集群（一、开篇） <https://www.jianshu.com/p/78a5afd0c597>`_
 * `Kubernetes Nginx Ingress 教程 <https://mritd.me/2017/03/04/how-to-use-nginx-ingress/?utm_source=tuicool&utm_medium=referral>`_
 * `kubernetes 1.12.1 Ingress-nginx 部署使用 <https://www.jianshu.com/p/e30b06906b77>`_
+* `Kubernetes Ingress实战 <http://www.cnblogs.com/zhaojiankai/p/7896357.html>`_
+* `Metallb – 贫苦 K8S 用户的负载均衡支持 <https://it.baiked.com/kubernetes/3215.html>`_
 
 安装
 ----
@@ -255,11 +258,35 @@ volumeattachments                              storage.k8s.io                 fa
 Ingress
 -------
 
-namespace/ingress-nginx created
-configmap/nginx-configuration created
-serviceaccount/nginx-ingress-serviceaccount created
-clusterrole.rbac.authorization.k8s.io/nginx-ingress-clusterrole created
-role.rbac.authorization.k8s.io/nginx-ingress-role created
-rolebinding.rbac.authorization.k8s.io/nginx-ingress-role-nisa-binding created
-clusterrolebinding.rbac.authorization.k8s.io/nginx-ingress-clusterrole-nisa-binding created
-deployment.extensions/nginx-ingress-controller created
+ingress
+^^^^^^^
+
+必须安装的资源
+
+* namespace/ingress-nginx created
+* configmap/nginx-configuration created
+* serviceaccount/nginx-ingress-serviceaccount created
+* clusterrole.rbac.authorization.k8s.io/nginx-ingress-clusterrole created
+* role.rbac.authorization.k8s.io/nginx-ingress-role created
+* rolebinding.rbac.authorization.k8s.io/nginx-ingress-role-nisa-binding created
+* clusterrolebinding.rbac.authorization.k8s.io/nginx-ingress-clusterrole-nisa-binding created
+* deployment.extensions/nginx-ingress-controller created
+
+ingress本身需要对外，则默认用nodePort
+
+* service/ingress-nginx
+  
+metalLB
+  
+* namespace/metallb-system created
+* serviceaccount/controller created
+* serviceaccount/speaker created
+* clusterrole.rbac.authorization.k8s.io/metallb-system:controller created
+* clusterrole.rbac.authorization.k8s.io/metallb-system:speaker created
+* role.rbac.authorization.k8s.io/config-watcher created
+* clusterrolebinding.rbac.authorization.k8s.io/metallb-system:controller created
+* clusterrolebinding.rbac.authorization.k8s.io/metallb-system:speaker created
+* rolebinding.rbac.authorization.k8s.io/config-watcher created
+* daemonset.apps/speaker created
+* deployment.apps/controller created
+
