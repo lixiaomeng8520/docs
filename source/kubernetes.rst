@@ -13,6 +13,8 @@ Kubernetes
 
 第三方参考
 
+* `Kubernetes Ingress实战(一)：在Kubernetes集群中部署NGINX Ingress Controller <https://blog.frognew.com/2018/06/kubernetes-ingress-1.html>`_
+* `Setting up a Nginx Ingress with Kubernetes on bare-metal servers <http://blog.will3942.com/nginx-kubernetes-bare-metal>`_
 * `Kubernetes指南 <https://kubernetes.feisky.xyz/>`_
 * `Learn Kubernetes in Under 3 Hours: A Detailed Guide to Orchestrating Containers <https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882>`_
 * `三小时攻克 Kubernetes！ <https://mp.weixin.qq.com/s/gLbfwS89cpAkkoVMzJc6sQ>`_
