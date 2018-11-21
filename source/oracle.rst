@@ -1,51 +1,62 @@
 Oracle
 ======
 
-镜像
-----
+* `IMP-00038: Could not convert to environment character set's handle <https://blog.csdn.net/pierre_/article/details/46346843>`_
+* `ORACLE IMPDP导入提示ORA-01918：user‘XX’ does not exist <https://blog.csdn.net/u013190088/article/details/71515285>`_
+* `expdp ORA-39070：Unable to open the log file <https://www.cnblogs.com/xqzt/p/5035564.html>`_
 
-registry.aliyuncs.com/helowin/oracle_11g
-
-* `阿里云oracle镜像 <https://dev.aliyun.com/detail.html?spm=5176.1972343.2.2.32595aaaLv6M2v&repoId=1969>`_
-  
-环境变量
+配置环境
 --------
 
-.. code-block:: bash
-
-    source /home/oracle/.bash_profile
-
-登录
-----
-
-.. code-block:: bash
-
-    sqlplus /nolog
-    connect /as sysdba
-
-添加用户
---------
+1. `下载镜像 <https://dev.aliyun.com/detail.html?spm=5176.1972343.2.2.32595aaaLv6M2v&repoId=1969>`_
+2. 进入容器执行 ``source /home/oracle/.bash_profile``
+3. 连入oracle ``sqlplus /nolog``
+4. 连入sysdba ``connect /as sysdba``
+5. 添加用户
 
 .. code-block:: bash
     
-    create user dfish identified by dfish;
-    grant connect,resource,dba to dfish;
+    create user pre_user identified by pre_user;
+    grant connect,resource,dba to pre_user;
+
+imp导入
+-------
+
+.. code-block:: bash
+
+    imp pre_user/pre_user@helowin file=/tmp/cms.dmp full=y
+
+.. note::
+    
+    如果提示表空间不存在，则首先添加表空间
+
+impdp导入
+---------
+
+1. 创建directory 
+
+.. code-block:: bash
+
+    create or replace directory pre_dir as '/tmp/pre';
+
+2. 导入
+
+.. code-block:: bash   
+
+   impdp pre_user/pre_user@helowin DIRECTORY=pre_dir DUMPFILE=cms.dmp
+
+.. note::
+    
+    如果提示用户name不存在，则在impdp最后添加 ``REMAP_SCHEMA=name:pre_user``
+
+    如果提示表空间name不存在，则首先添加表空间，然后在impdp最后添加 ``REMAP_TABLESPACE=name:pre_tablespace``
 
 添加表空间
 ----------
 
 .. code-block:: bash
 
-    create tablespace DFISH datafile '/tmp/DFISH.dbf' size 1000M autoextend on next 100M;
-
-导入dmp
--------
-
-shell
-
-.. code-block:: bash
-
-    imp dfish/dfish@helowin file=/tmp/dfish.dmp full=y
+    create tablespace pre_tablespace datafile '/tmp/pre_tablespace.dbf' size 1000M autoextend on next 100M;
 
 修改字符集
 ----------
