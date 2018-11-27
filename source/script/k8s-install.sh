@@ -8,7 +8,7 @@ fi
 
 ### config yum source
 
-mkdir -p /etc/yum.repos.d/bak && mv -f /etc/yum.repos.d/* /etc/yum.repos.d/bak
+mkdir -p /etc/yum.repos.d/bak && mv -f /etc/yum.repos.d/Centos* /etc/yum.repos.d/bak
 
 cat > /etc/yum.repos.d/centos.repo <<EOF
 [base]
