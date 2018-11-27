@@ -29,6 +29,8 @@ Kubernetes
 * `kubernetes 1.12.1 Ingress-nginx 部署使用 <https://www.jianshu.com/p/e30b06906b77>`_
 * `Kubernetes Ingress实战 <http://www.cnblogs.com/zhaojiankai/p/7896357.html>`_
 * `Metallb – 贫苦 K8S 用户的负载均衡支持 <https://it.baiked.com/kubernetes/3215.html>`_
+* `一篇讲透Kubernetes与GlusterFS之间的爱恨情仇（一） <http://rdc.hundsun.com/portal/article/826.html>`_
+* `一篇讲透Kubernetes与GlusterFS之间的爱恨情仇（二） <http://rdc.hundsun.com/portal/article/827.html>`_
 
 安装
 ----
