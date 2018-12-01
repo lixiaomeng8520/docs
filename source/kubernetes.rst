@@ -10,6 +10,10 @@ Kubernetes
 * `Web UI (Dashboard) <https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/>`_
 * `NGINX Ingress Controller <https://kubernetes.github.io/ingress-nginx/>`_
 * `Kubernetes中文手册 <https://www.kubernetes.org.cn/docs>`_
+  
+官方实例
+
+* `Pull an Image from a Private Registry <https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/>`_
 
 第三方参考
 
@@ -31,6 +35,9 @@ Kubernetes
 * `Metallb – 贫苦 K8S 用户的负载均衡支持 <https://it.baiked.com/kubernetes/3215.html>`_
 * `一篇讲透Kubernetes与GlusterFS之间的爱恨情仇（一） <http://rdc.hundsun.com/portal/article/826.html>`_
 * `一篇讲透Kubernetes与GlusterFS之间的爱恨情仇（二） <http://rdc.hundsun.com/portal/article/827.html>`_
+* `Force pods to re-pull an image without changing the image tag <https://github.com/kubernetes/kubernetes/issues/33664>`_
+* `10 Most Common Reasons Kubernetes Deployments Fail  <https://kukulinski.com/10-most-common-reasons-kubernetes-deployments-fail-part-2/#10containerimagenotupdating>`_
+* `以Kubeadm方式安装的Kubernetes集群的探索 <https://tonybai.com/2017/01/24/explore-kubernetes-cluster-installed-by-kubeadm/>`_
 
 安装
 ----
@@ -38,101 +45,7 @@ Kubernetes
 所有机器
 ^^^^^^^^
 
-.. code-block:: bash
-
-    #!/bin/bash
-
-    if [ $# != 1 ]; then
-        echo '参数错误'
-        exit 1
-    fi
-
-    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-
-    hostnamectl set-hostname $1
-
-    echo -e '192.168.56.21 master\n192.168.56.22 worker1\n192.168.56.23 worker2' >> /etc/hosts
-
-    setenforce 0
-    sed -i -e 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
-
-    swapoff -a
-    sed -i -e '/swap/{s/^/#/}' /etc/fstab
-
-    systemctl stop firewalld
-    systemctl disable firewalld
-
-    mkdir /etc/yum.repos.d/bak && mv /etc/yum.repos.d/CentOS* /etc/yum.repos.d/bak
-    
-    cat > /etc/yum.repos.d/centos.repo <<EOF
-    [base]
-    name=CentOS-7 - Base
-    baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/7/os/\$basearch/
-    gpgcheck=1
-    gpgkey=https://mirrors.tuna.tsinghua.edu.cn/centos/RPM-GPG-KEY-CentOS-7
-
-    #released updates
-    [updates]
-    name=CentOS-7 - Updates
-    baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/7/updates/\$basearch/
-    gpgcheck=1
-    gpgkey=https://mirrors.tuna.tsinghua.edu.cn/centos/RPM-GPG-KEY-CentOS-7
-
-    #additional packages that may be useful
-    [extras]
-    name=CentOS-7 - Extras
-    baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/7/extras/\$basearch/
-    gpgcheck=1
-    gpgkey=https://mirrors.tuna.tsinghua.edu.cn/centos/RPM-GPG-KEY-CentOS-7
-    EOF
-
-    cat > /etc/yum.repos.d/docker.repo <<EOF
-    [docker-ce-stable]
-    name=Docker CE Stable - \$basearch
-    baseurl=https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/7/\$basearch/stable
-    enabled=1
-    gpgcheck=1
-    gpgkey=https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/gpg
-    EOF
-
-    cat > /etc/yum.repos.d/kubernetes.repo <<EOF 
-    [kubernetes]
-    name=Kubernetes
-    baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
-    enabled=1
-    gpgcheck=1
-    repo_gpgcheck=1
-    gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-    EOF
-
-    yum install -y docker-ce kubelet kubeadm kubectl chrony net-tools vim
-
-    systemctl enable kubelet && systemctl start kubelet
-    systemctl start chronyd && systemctl enable chronyd
-
-    mkdir /etc/docker
-    cat > /etc/docker/daemon.json <<EOF 
-    {
-        "insecure-registries": ["192.168.56.20:8018"]
-    }
-    EOF
-    systemctl enable docker && systemctl start docker
-
-    docker pull 192.168.56.20:8018/kube-apiserver:v1.12.1 && \
-    docker pull 192.168.56.20:8018/kube-controller-manager:v1.12.1 && \
-    docker pull 192.168.56.20:8018/kube-scheduler:v1.12.1 && \
-    docker pull 192.168.56.20:8018/kube-proxy:v1.12.1 && \
-    docker pull 192.168.56.20:8018/pause:3.1 && \
-    docker pull 192.168.56.20:8018/etcd:3.2.24 && \
-    docker pull 192.168.56.20:8018/coredns:1.2.2
-
-    docker tag 192.168.56.20:8018/kube-apiserver:v1.12.1 k8s.gcr.io/kube-apiserver:v1.12.1 && \
-    docker tag 192.168.56.20:8018/kube-controller-manager:v1.12.1 k8s.gcr.io/kube-controller-manager:v1.12.1 && \
-    docker tag 192.168.56.20:8018/kube-scheduler:v1.12.1 k8s.gcr.io/kube-scheduler:v1.12.1 && \
-    docker tag 192.168.56.20:8018/kube-proxy:v1.12.1 k8s.gcr.io/kube-proxy:v1.12.1 && \
-    docker tag 192.168.56.20:8018/pause:3.1 k8s.gcr.io/pause:3.1 && \
-    docker tag 192.168.56.20:8018/etcd:3.2.24 k8s.gcr.io/etcd:3.2.24 && \
-    docker tag 192.168.56.20:8018/coredns:1.2.2 k8s.gcr.io/coredns:1.2.2
+`安装脚本 <https://raw.githubusercontent.com/lixiaomeng8520/docs/master/source/script/k8s-install.sh>`_
 
 master
 ^^^^^^
@@ -168,129 +81,11 @@ worker
     kubectl delete node master
     kubeadm reset
 
-部署应用
---------
+NOTE
+----
 
-语法
-
+1. 重新用上一个tag部署会导致无效，可以set env来强制重新部署。
+   
 .. code-block:: bash
 
-    kubectl run NAME --image=image [--env="key=value"] [--port=port] [--replicas=replicas] [--dry-run=bool] [--overrides=inline-json] [--command] -- [COMMAND] [args...]
-    kubectl get [(-o|--output=)json|yaml|wide|custom-columns=...|custom-columns-file=...|go-template=...|go-template-file=...|jsonpath=...|jsonpath-file=...] (TYPE[.VERSION][.GROUP] [NAME | -l label] | TYPE[.VERSION][.GROUP]/NAME ...) [flags]
-    kubectl expose (-f FILENAME | TYPE NAME) [--port=port] [--protocol=TCP|UDP|SCTP] [--target-port=number-or-name] [--name=name] [--external-ip=external-ip-of-service] [--type=type]
-    kubectl delete ([-f FILENAME] | TYPE [(NAME | -l label | --all)])
-    kubectl scale [--resource-version=version] [--current-replicas=count] --replicas=COUNT (-f FILENAME | TYPE NAME)
-
-实例
-
-.. code-block:: bash
-
-    kubectl run hello --image jocatalin/kubernetes-bootcamp:v1 --replicas 1 --labels 'app=hello'
-
-    kubectl get
-
-    kubectl describe
-    
-    kubectl delete
-
-    kubectl logs $POD_NAME
-
-    kubectl exec -it $POD_NAME bash
-
-    kubectl scale deployments hello --replicas=4
-
-    kubectl expose deploy hello --port 8080 --name=hello-svc
-
-对象类型
---------
-
-NAME                              SHORTNAMES   APIGROUP                       NAMESPACED   KIND
-bindings                                                                      true         Binding
-componentstatuses                 cs                                          false        ComponentStatus
-configmaps                        cm                                          true         ConfigMap
-endpoints                         ep                                          true         Endpoints
-events                            ev                                          true         Event
-limitranges                       limits                                      true         LimitRange
-namespaces                        ns                                          false        Namespace
-nodes                             no                                          false        Node
-persistentvolumeclaims            pvc                                         true         PersistentVolumeClaim
-persistentvolumes                 pv                                          false        PersistentVolume
-pods                              po                                          true         Pod
-podtemplates                                                                  true         PodTemplate
-replicationcontrollers            rc                                          true         ReplicationController
-resourcequotas                    quota                                       true         ResourceQuota
-secrets                                                                       true         Secret
-serviceaccounts                   sa                                          true         ServiceAccount
-services                          svc                                         true         Service
-mutatingwebhookconfigurations                  admissionregistration.k8s.io   false        MutatingWebhookConfiguration
-validatingwebhookconfigurations                admissionregistration.k8s.io   false        ValidatingWebhookConfiguration
-customresourcedefinitions         crd,crds     apiextensions.k8s.io           false        CustomResourceDefinition
-apiservices                                    apiregistration.k8s.io         false        APIService
-controllerrevisions                            apps                           true         ControllerRevision
-daemonsets                        ds           apps                           true         DaemonSet
-deployments                       deploy       apps                           true         Deployment
-replicasets                       rs           apps                           true         ReplicaSet
-statefulsets                      sts          apps                           true         StatefulSet
-tokenreviews                                   authentication.k8s.io          false        TokenReview
-localsubjectaccessreviews                      authorization.k8s.io           true         LocalSubjectAccessReview
-selfsubjectaccessreviews                       authorization.k8s.io           false        SelfSubjectAccessReview
-selfsubjectrulesreviews                        authorization.k8s.io           false        SelfSubjectRulesReview
-subjectaccessreviews                           authorization.k8s.io           false        SubjectAccessReview
-horizontalpodautoscalers          hpa          autoscaling                    true         HorizontalPodAutoscaler
-cronjobs                          cj           batch                          true         CronJob
-jobs                                           batch                          true         Job
-certificatesigningrequests        csr          certificates.k8s.io            false        CertificateSigningRequest
-leases                                         coordination.k8s.io            true         Lease
-events                            ev           events.k8s.io                  true         Event
-daemonsets                        ds           extensions                     true         DaemonSet
-deployments                       deploy       extensions                     true         Deployment
-ingresses                         ing          extensions                     true         Ingress
-networkpolicies                   netpol       extensions                     true         NetworkPolicy
-podsecuritypolicies               psp          extensions                     false        PodSecurityPolicy
-replicasets                       rs           extensions                     true         ReplicaSet
-networkpolicies                   netpol       networking.k8s.io              true         NetworkPolicy
-poddisruptionbudgets              pdb          policy                         true         PodDisruptionBudget
-podsecuritypolicies               psp          policy                         false        PodSecurityPolicy
-clusterrolebindings                            rbac.authorization.k8s.io      false        ClusterRoleBinding
-clusterroles                                   rbac.authorization.k8s.io      false        ClusterRole
-rolebindings                                   rbac.authorization.k8s.io      true         RoleBinding
-roles                                          rbac.authorization.k8s.io      true         Role
-priorityclasses                   pc           scheduling.k8s.io              false        PriorityClass
-storageclasses                    sc           storage.k8s.io                 false        StorageClass
-volumeattachments                              storage.k8s.io                 false        VolumeAttachment
-
-Ingress
--------
-
-ingress
-^^^^^^^
-
-必须安装的资源
-
-* namespace/ingress-nginx created
-* configmap/nginx-configuration created
-* serviceaccount/nginx-ingress-serviceaccount created
-* clusterrole.rbac.authorization.k8s.io/nginx-ingress-clusterrole created
-* role.rbac.authorization.k8s.io/nginx-ingress-role created
-* rolebinding.rbac.authorization.k8s.io/nginx-ingress-role-nisa-binding created
-* clusterrolebinding.rbac.authorization.k8s.io/nginx-ingress-clusterrole-nisa-binding created
-* deployment.extensions/nginx-ingress-controller created
-
-ingress本身需要对外，则默认用nodePort
-
-* service/ingress-nginx
-  
-metalLB
-  
-* namespace/metallb-system created
-* serviceaccount/controller created
-* serviceaccount/speaker created
-* clusterrole.rbac.authorization.k8s.io/metallb-system:controller created
-* clusterrole.rbac.authorization.k8s.io/metallb-system:speaker created
-* role.rbac.authorization.k8s.io/config-watcher created
-* clusterrolebinding.rbac.authorization.k8s.io/metallb-system:controller created
-* clusterrolebinding.rbac.authorization.k8s.io/metallb-system:speaker created
-* rolebinding.rbac.authorization.k8s.io/config-watcher created
-* daemonset.apps/speaker created
-* deployment.apps/controller created
-
+    kubectl set env deploy nginx DEPLOY_DATE="$(date)"

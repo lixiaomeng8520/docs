@@ -55,6 +55,7 @@ EOF
 ### config time
 
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+echo 'Asia/Shanghai' > /etc/timezone
 yum install -y chrony
 systemctl start chronyd && systemctl enable chronyd
 
@@ -93,7 +94,6 @@ yum install -y docker-ce-18.06.1.ce kubelet-1.12.2 kubeadm-1.12.2 kubectl-1.12.2
 
 systemctl enable docker && systemctl start docker
 systemctl enable kubelet && systemctl start kubelet
-
 
 ### pull images
 
