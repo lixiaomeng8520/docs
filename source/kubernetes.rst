@@ -52,7 +52,11 @@ master
 
 .. note::
 
-    安装flannel，必须在init的时候指定--pod-network-cidr=10.244.0.0/16。
+    安装flannel，必须在init的时候指定 --pod-network-cidr=10.244.0.0/16。
+
+    注意安装版本号，默认会联网查找最新版本，也可指定版本 --kubernetes-version=v1.12.2。
+
+    当有多网卡的时候，注意指定ip --apiserver-advertise-address=192.168.56.20。
 
 .. code-block:: bash
     
