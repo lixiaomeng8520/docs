@@ -14,6 +14,7 @@ Kubernetes
 官方实例
 
 * `Pull an Image from a Private Registry <https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/>`_
+* `Tools for Monitoring Resources <https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/>`_
 
 第三方参考
 
@@ -38,6 +39,9 @@ Kubernetes
 * `Force pods to re-pull an image without changing the image tag <https://github.com/kubernetes/kubernetes/issues/33664>`_
 * `10 Most Common Reasons Kubernetes Deployments Fail  <https://kukulinski.com/10-most-common-reasons-kubernetes-deployments-fail-part-2/#10containerimagenotupdating>`_
 * `以Kubeadm方式安装的Kubernetes集群的探索 <https://tonybai.com/2017/01/24/explore-kubernetes-cluster-installed-by-kubeadm/>`_
+* `使用Filebeat收集Kubernetes的应用日志 <https://www.kubernetes.org.cn/2011.html>`_
+* `How To Setup Prometheus Monitoring On Kubernetes Cluster <https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/>`_
+* `Get Kubernetes Cluster Metrics with Prometheus in 5 Minutes <https://akomljen.com/get-kubernetes-cluster-metrics-with-prometheus-in-5-minutes/>`_
 
 安装
 ----
@@ -61,8 +65,11 @@ master
 .. code-block:: bash
     
     kubeadm init --pod-network-cidr=10.244.0.0/16
-    export KUBECONFIG=/etc/kubernetes/admin.conf
-    echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~/.bash_profile
+    #export KUBECONFIG=/etc/kubernetes/admin.conf
+    #echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~/.bash_profile
+    mkdir -p $HOME/.kube
+    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    sudo chown $(id -u):$(id -g) $HOME/.kube/config
     kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
     
 worker

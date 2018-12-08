@@ -8,6 +8,32 @@ Docker
 * `控制docker-compose中服务的启动顺序 <https://blog.csdn.net/xiao_jun_0820/article/details/78676765>`_
 * `你的Docker镜像仓库占用了多少空间？删除镜像与空间回收 <https://zhuanlan.zhihu.com/p/33324217>`_
 
+代理
+----
+
+如果发现image国内无法连接，可以使用代理来解决。在systemd里添加HTTP_PROXY环境变量，如果有本地registry，则可以添加NO_PROXY变量。
+
+.. code-block:: bash
+
+    # 创建目录和文件
+    mkdir -p /etc/systemd/system/docker.service.d
+    touch /etc/systemd/system/docker.service.d/http-proxy.conf
+
+    # 编辑文件
+    vim /etc/systemd/system/docker.service.d/http-proxy.conf
+
+    [Service]
+    Environment="HTTP_PROXY=http://23.106.148.18:55555"
+    Environment="HTTPS_PROXY=http://23.106.148.18:55555"
+    Environment="NO_PROXY=reg.lxm.cn"
+
+    # 重启
+    systemctl daemon-reload
+    systemctl restart docker
+
+    # 查看是否加载
+    systemctl show docker -p Environment
+
 安装
 ----
 
