@@ -33,6 +33,7 @@ https://stackoverflow.com/questions/13348480/how-to-upload-file-from-command-lin
     source/elk
     source/supervisor
     source/vagrant
+    source/sublime
     
 table模板
 
