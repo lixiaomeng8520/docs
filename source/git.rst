@@ -4,6 +4,21 @@ Git
 * `【Git学习】使用git reflog 命令来查看历史提交记录并使用提交记录恢复已经被删除掉的分支 <https://blog.csdn.net/ouyang_peng/article/details/84061662>`_
 * `GIT 常用命令 <http://www.cnblogs.com/chenwolong/p/GIT.html>`_
 
+config
+------
+
+.. code-block:: bash
+
+    [user]
+        name = lixiaomeng
+        email = lixiaomeng8520@163.com
+    [http]
+        proxy = http://xxx.xxx.xxx.xxx:xxxx
+        # proxy = socks5://192.168.56.2:1080
+    [https]
+        proxy = https://xxx.xxx.xxx.xxx:xxxx
+        # proxy = socks5://192.168.56.2:1080
+
 remote
 ------
 

@@ -10,6 +10,7 @@ https://stackoverflow.com/questions/13348480/how-to-upload-file-from-command-lin
 
 .. toctree::
     :maxdepth: 1
+    :caption: 系统
 
     source/network
     source/linux
@@ -21,6 +22,12 @@ https://stackoverflow.com/questions/13348480/how-to-upload-file-from-command-lin
     source/logrotate
     source/time
     source/sphinx
+    source/firewalld
+
+.. toctree::
+    :maxdepth: 1
+    :caption: 开发
+
     source/nginx   
     source/git
     source/php
@@ -33,7 +40,15 @@ https://stackoverflow.com/questions/13348480/how-to-upload-file-from-command-lin
     source/elk
     source/supervisor
     source/vagrant
+
+.. toctree::
+    :maxdepth: 1
+    :caption: 编辑器
+
     source/sublime
+    source/vim
+    
+
     
 table模板
 

@@ -5,6 +5,7 @@ Sublime
 ----
 
 1. color schema: LAZY
+^^^^^^^^^^^^^^^^^^^^^
 
 sublime3默认不显示老的颜色模式，可以通过下列配置显示出来，然后进行选择
 
@@ -19,3 +20,6 @@ sublime3默认不显示老的颜色模式，可以通过下列配置显示出来
 	"color_scheme": "Packages/Color Scheme - Legacy/LAZY.tmTheme"
 
 2. A File Icon
+^^^^^^^^^^^^^^
+
+目录树图标
