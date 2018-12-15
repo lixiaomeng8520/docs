@@ -23,8 +23,8 @@ Go
   
 vs开发工具库
 
-* `gocode（自动补全） <https://github.com/mdempsky/gocode>`_
-* `gopkgs（获取可访问的包） <https://github.com/uudashr/gopkgs>`_
+go get -v github.com/sqs/goreturns
+go get -v github.com/uudashr/gopkgs/cmd/gopkgs
 
 类型
 ----
