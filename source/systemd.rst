@@ -2,6 +2,7 @@ Systemd
 =======
 
 * `Systemd 入门教程：命令篇​ <http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html>`_
+* `如何编写一个Systemd Service <https://segmentfault.com/a/1190000014740871>`_
   
 主命令
   
@@ -92,3 +93,18 @@ unit管理
 +----------------------------+----------------------------------------------------------------+
 | 列出单个unit files         | systemctl list-unit-files smb.service                          |
 +----------------------------+----------------------------------------------------------------+
+
+.. code-block:: bash
+
+    [Unit]
+    Description=Docs
+
+    [Service]
+    Type=forking
+    PIDFile=/tmp/docs.pid
+    ExecStartPre=/usr/bin/rm -rf /run/tmp/docs.pid
+    ExecStartPre=/usr/bin/rm -rf /root/workspace/docs/_build
+    ExecStart=/usr/bin/sphinx-autobuild -H 0.0.0.0 -p 8000 /root/workspace/docs /root/workspace/docs/_build/html
+
+    [Install]
+    WantedBy=multi-user.target

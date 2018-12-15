@@ -5,6 +5,8 @@ lxm的文档
 
 https://stackoverflow.com/questions/13348480/how-to-upload-file-from-command-line-as-file-parameter-in-jenkins
 
+http://blog.51cto.com/xiaogongju/2084464
+
 目录
 ^^^^
 
@@ -40,6 +42,7 @@ https://stackoverflow.com/questions/13348480/how-to-upload-file-from-command-lin
     source/elk
     source/supervisor
     source/vagrant
+    source/go
 
 .. toctree::
     :maxdepth: 1

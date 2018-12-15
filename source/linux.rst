@@ -118,6 +118,19 @@ elastic
     type=rpm-md
     EOF
 
+zabbix
+
+.. code-block:: bash
+
+    cat <<EOF > /etc/yum.repos.d/zabbix.repo
+    [zabbix]
+    name=Zabbix - 4.1
+    baseurl=https://mirrors.tuna.tsinghua.edu.cn/zabbix/zabbix/4.1/rhel/7/\$basearch
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://mirrors.tuna.tsinghua.edu.cn/zabbix/RPM-GPG-KEY-ZABBIX
+    EOF
+
 Debian
 ^^^^^^
 
@@ -507,13 +520,9 @@ shell
 SIGQUIT, SIGTERM, SIGINT, SIGKILL
 ---------------------------------
 
-1. SIGINT SIGTERM区别
+设置环境变量
+------------
 
-前者与字符ctrl+c关联，后者没有任何控制字符关联。
+.. code-block:: bash
 
-前者只能结束前台进程，后者则不是。
-
-2. SIGTERM SIGKILL的区别
-
-前者可以被阻塞、处理和忽略，但是后者不可以。KILL命令的默认不带参数发送的信号就是SIGTERM.让程序有好的退出。因为它可以被阻塞，所以有的进程不能被结束时，用kill发送后者信号，即可。即：kill -9 进程号。
-
+    source /etc/profile
