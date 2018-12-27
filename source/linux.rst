@@ -131,6 +131,18 @@ zabbix
     gpgkey=https://mirrors.tuna.tsinghua.edu.cn/zabbix/RPM-GPG-KEY-ZABBIX
     EOF
 
+mysql
+
+.. code-block:: bash
+
+    cat <<EOF > /etc/yum.repos.d/mysql57.repo
+    [mysql]
+    name=Mysql - 5.7
+    baseurl=https://mirror.tuna.tsinghua.edu.cn/mysql/yum/mysql57-community-el7/
+    enabled=1
+    gpgcheck=0
+    EOF
+
 Debian
 ^^^^^^
 
