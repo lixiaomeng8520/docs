@@ -178,3 +178,15 @@ git checkout commit -- file = git reset --hard commit -- file （可惜不存在
 
     git fetch origin dev:dev
     git checkout dev
+
+首次push
+--------
+
+.. code-block:: bash
+
+    echo "# hello" >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git remote add origin git@github.com:lixiaomeng8520/hello.git
+    git push -u origin master
