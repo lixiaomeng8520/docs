@@ -43,6 +43,8 @@ http://blog.51cto.com/xiaogongju/2084464
     source/supervisor
     source/vagrant
     source/go
+    source/regex
+    source/testing
 
 .. toctree::
     :maxdepth: 1

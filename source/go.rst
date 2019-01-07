@@ -8,22 +8,14 @@ Go
 * `Practical Go: Real world advice for writing maintainable Go programs <https://dave.cheney.net/practical-go/presentations/qcon-china.html>`_
 * `Socket编程---最浅显易懂的介绍 <https://blog.csdn.net/alpha_love/article/details/62043077>`_
 * `Go语言入门教程，Golang入门教程（非常详细） <http://c.biancheng.net/golang/>`_
-
-示例学习
-
+* `Golang标准库文档 <https://studygolang.com/pkgdoc>`_
+* `Go Walker <https://gowalker.org/>`_
+* `astaxie <https://github.com/astaxie>`_
+* `Unknwon <https://github.com/Unknwon>`_
 * `The-Golang-Standard-Library-by-Example <https://github.com/polaris1119/The-Golang-Standard-Library-by-Example>`_
 * `gobyexample <https://github.com/mmcgrana/gobyexample>`_
 
-大牛
-
-* `astaxie <https://github.com/astaxie>`_
-* `Unknwon <https://github.com/Unknwon>`_
-
-库搜索
-
-* `Go Walker <https://gowalker.org/>`_
-
-类型
+语法
 ----
 
 引用类型
@@ -34,26 +26,17 @@ Go
 4. func
 5. interface
 
-工具
-----
+包介绍
+------
 
-+------------------------------------+----------------------------------------------------------------+
-| name                               | desc                                                           |
-+====================================+================================================================+
-| github.com/kardianos/govendor      |                                                                |
-+------------------------------------+----------------------------------------------------------------+
-| julienschmidt/httprouter           |                                                                |
-+------------------------------------+----------------------------------------------------------------+
-| go-playground/validator            |                                                                |
-+------------------------------------+----------------------------------------------------------------+
-|                                    |                                                                |
-+------------------------------------+----------------------------------------------------------------+
-|                                    |                                                                |
-+------------------------------------+----------------------------------------------------------------+
-|                                    |                                                                |
-+------------------------------------+----------------------------------------------------------------+
+* sync：Pool（对象池），Once（一次执行），Mutex（互斥锁），RWMutex（读写互斥锁），WaitGroup（组等待），Cond（条件等待）等功能。
+* net/http：http服务器，http请求。
+* strings：字符串的操作。
+* io：
+* io/ioutil：简便的文件读写。
 
 vscode插件
+----------
 
 1. 安装tools
    
@@ -73,4 +56,3 @@ vscode插件
     go get -v github.com/derekparker/delve/cmd/dlv
     go get -v github.com/rogpeppe/godef
 
-http包相关

@@ -100,3 +100,11 @@ NOTE
 .. code-block:: bash
 
     kubectl set env deploy nginx DEPLOY_DATE="$(date)"
+
+2. livenessProbe 和 readinessProbe
+   
+livenessProbe代表running, pending, terminating等状态
+
+readinessProbe代表 1/3 pod内容器的就绪状态
+
+当``apply``或者``set env``来重新部署时，会先添加一个po，再删减一个po。删减的时机是当所有容器都处于就绪状态才会触发。所以可以进行就绪性检测，当网站可访问时（返回200等），才处于就绪状态，进而开始删减，这样可以保证业务不间断，不会因为老po太早删减而新po服务还未启动使得服务有一段时间不可访问。
