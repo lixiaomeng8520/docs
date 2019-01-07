@@ -52,7 +52,7 @@ http://blog.51cto.com/xiaogongju/2084464
 
     source/sublime
     source/vim
-    
+    source/vscode
 
     
 table模板
