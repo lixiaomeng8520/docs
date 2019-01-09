@@ -18,7 +18,10 @@ settings
 
     /* 文件属性 */
     "files.eol": "\n",
-    "files.encoding": "utf8"
+    "files.encoding": "utf8",
+
+    /* 终端 */
+    "terminal.integrated.shell.windows": "D:/Program Files/Git/bin/bash.exe",
 
     /* go插件 */
     "go.formatFlags": ["-d"], //禁用保存时自动格式化
