@@ -14,6 +14,7 @@ Go
 * `Unknwon <https://github.com/Unknwon>`_
 * `The-Golang-Standard-Library-by-Example <https://github.com/polaris1119/The-Golang-Standard-Library-by-Example>`_
 * `gobyexample <https://github.com/mmcgrana/gobyexample>`_
+* `godoc <https://godoc.org/>`_
 
 语法
 ----
