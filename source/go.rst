@@ -14,6 +14,9 @@ Go
 * `Unknwon <https://github.com/Unknwon>`_
 * `The-Golang-Standard-Library-by-Example <https://github.com/polaris1119/The-Golang-Standard-Library-by-Example>`_
 * `gobyexample <https://github.com/mmcgrana/gobyexample>`_
+* `Go_18: Golang 中三种读取文件发放性能对比 <https://www.cnblogs.com/liang1101/p/6843084.html>`_
+* `Golang读写文件的几种方式 <https://cloud.tencent.com/developer/article/1349809>`_
+* `Go语言三种方式读取文件效率对比及原因分析 <https://blog.csdn.net/c_j33/article/details/82957394>`_
 
 语法
 ----
