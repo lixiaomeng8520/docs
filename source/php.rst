@@ -12,6 +12,7 @@ PHP
 * `Aura for PHP <http://auraphp.com/>`_
 * `Slim <https://www.slimframework.com/>`_
 * `REST API Handbook <https://developer.wordpress.org/rest-api/>`_
+* `PSR中文翻译 <https://laravel-china.org/docs/psr>`_
 
 知识点
 ------
@@ -69,4 +70,8 @@ nginx配置
         listen 80;
         server_name pp3.lxm.cn;
         root "E:/workspace/php/PecidPHP3/public";
+
+        location / {
+            try_files 
+        }
     }
