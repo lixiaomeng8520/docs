@@ -19,3 +19,9 @@ Sphinx
 .. code-block:: bash
 
     sphinx-autobuild -H 0.0.0.0 -p 8000 . _build/html/
+
+使用readthedocs
+---------------
+
+1. 添加项目，填写相应的github地址，这里的项目名称由于是全网的，所以最好加个前缀，否则很容易提示重复。
+2. 管理->集成，添加一个“GitHub进向webhook”，然后复制类似 ``https://readthedocs.org/api/v2/webhook/lxm-docs/64812/`` 的链接，填写在github的webhook里。可以push测试一下。
