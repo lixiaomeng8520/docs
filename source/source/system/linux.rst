@@ -18,22 +18,23 @@ centos
 
     cat > /etc/yum.repos.d/centos.repo <<EOF
     [base]
-    name=CentOS-7 - Base
+    name=base
     baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/7/os/\$basearch/
+    enabled=1
     gpgcheck=1
     gpgkey=https://mirrors.tuna.tsinghua.edu.cn/centos/RPM-GPG-KEY-CentOS-7
 
-    #released updates
     [updates]
-    name=CentOS-7 - Updates
+    name=updates
     baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/7/updates/\$basearch/
+    enabled=1
     gpgcheck=1
     gpgkey=https://mirrors.tuna.tsinghua.edu.cn/centos/RPM-GPG-KEY-CentOS-7
 
-    #additional packages that may be useful
     [extras]
-    name=CentOS-7 - Extras
+    name=extras
     baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/7/extras/\$basearch/
+    enabled=1
     gpgcheck=1
     gpgkey=https://mirrors.tuna.tsinghua.edu.cn/centos/RPM-GPG-KEY-CentOS-7
     EOF
@@ -56,8 +57,8 @@ ius
 .. code-block:: bash
 
     cat > /etc/yum.repos.d/ius.repo <<EOF
-    [ius-stable]
-    name=ius - stable
+    [ius]
+    name=ius
     baseurl=https://mirrors.tuna.tsinghua.edu.cn/ius/stable/CentOS/7/\$basearch
     enabled=1
     gpgcheck=1
@@ -69,8 +70,8 @@ docker
 .. code-block:: bash
 
     cat > /etc/yum.repos.d/docker.repo <<EOF
-    [docker-ce-stable]
-    name=Docker CE Stable - \$basearch
+    [docker-ce]
+    name=docker-ce
     baseurl=https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/7/\$basearch/stable
     enabled=1
     gpgcheck=1
@@ -83,10 +84,10 @@ mongodb
 
     cat > /etc/yum.repos.d/mongodb.repo <<EOF
     [mongodb-org]
-    name=MongoDB Repository
+    name=mongodb-org
     baseurl=https://mirrors.tuna.tsinghua.edu.cn/mongodb/yum/el7/
-    gpgcheck=0
     enabled=1
+    gpgcheck=0
     EOF
 
 kubernetes
@@ -95,7 +96,7 @@ kubernetes
 
     cat <<EOF > /etc/yum.repos.d/kubernetes.repo
     [kubernetes]
-    name=Kubernetes
+    name=kubernetes
     baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
     enabled=1
     gpgcheck=1
@@ -139,6 +140,18 @@ mysql
     [mysql]
     name=Mysql - 5.7
     baseurl=https://mirror.tuna.tsinghua.edu.cn/mysql/yum/mysql57-community-el7/
+    enabled=1
+    gpgcheck=0
+    EOF
+
+nginx
+
+.. code-block:: bash
+
+    cat <<EOF > /etc/yum.repos.d/nginx.repo
+    [nginx]
+    name=nginx
+    baseurl=http://nginx.org/packages/centos/7/x86_64/
     enabled=1
     gpgcheck=0
     EOF
