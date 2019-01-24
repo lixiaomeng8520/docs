@@ -6,12 +6,11 @@ lxm的文档
 https://stackoverflow.com/questions/13348480/how-to-upload-file-from-command-line-as-file-parameter-in-jenkins
 
 
-
 杂项
 ----
 
 * `Fiddler 抓包工具总结 <https://www.cnblogs.com/yyhh/p/5140852.html>`_
-* `centos7手把手教你搭建zabbix监控 <http://blog.51cto.com/xiaogongju/2084464>`_
+* `Centos7手把手教你搭建zabbix监控 <http://blog.51cto.com/xiaogongju/2084464>`_
 * `win10开机自动打开上次未关闭的窗口? <https://answers.microsoft.com/zh-hans/windows/forum/windows_10-files/win10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%89%93/a278b709-ab05-4542-88a9-43c6e808049f>`_
 
 
