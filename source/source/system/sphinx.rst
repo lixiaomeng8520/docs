@@ -19,9 +19,3 @@ Sphinx
 .. code-block:: bash
 
     sphinx-autobuild -H 0.0.0.0 -p 8000 . _build/html/
-
-默认sock, pid, log路径都在/tmp下，而系统有时会清理/tmp目录，所以修改这三个路径到/var下。比如：
-
-1. /var/run/supervisor.sock
-2. /var/run/supervisor.pid
-3. /var/log/supervisor.log

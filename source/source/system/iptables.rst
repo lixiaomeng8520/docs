@@ -11,7 +11,7 @@ Iptables
 数据包流向
 ----------
 
-.. image:: ../attach/iptables-1.png
+.. image:: ../../attach/iptables-1.png
 
 命令
 ----

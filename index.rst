@@ -20,9 +20,9 @@ https://stackoverflow.com/questions/13348480/how-to-upload-file-from-command-lin
 .. toctree::
     :maxdepth: 1
 
-    source/system/index
-    source/develop/index
-    source/editor/index
+    source/source/system/index
+    source/source/develop/index
+    source/source/editor/index
 
     
 table模板
