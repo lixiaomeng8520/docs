@@ -26,20 +26,20 @@ vim ~/.vimrc
 命令
 ----
 
-.. image:: attach/vim-1.png
+.. image:: ../attach/vim-1.png
 
-.. image:: attach/vim-2.png
+.. image:: ../attach/vim-2.png
 
-.. image:: attach/vim-3.png
+.. image:: ../attach/vim-3.png
 
-.. image:: attach/vim-4.png
+.. image:: ../attach/vim-4.png
 
-.. image:: attach/vim-5.png
+.. image:: ../attach/vim-5.png
 
-.. image:: attach/vim-6.png
+.. image:: ../attach/vim-6.png
 
-.. image:: attach/vim-7.png
+.. image:: ../attach/vim-7.png
 
-.. image:: attach/vim-8.png
+.. image:: ../attach/vim-8.png
 
-.. image:: attach/vim-9.png
+.. image:: ../attach/vim-9.png

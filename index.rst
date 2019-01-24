@@ -12,48 +12,10 @@ http://blog.51cto.com/xiaogongju/2084464
 
 .. toctree::
     :maxdepth: 1
-    :caption: 系统
 
-    source/vps
-    source/network
-    source/linux
-    source/installCentos7
-    source/iptables
-    source/systemd
-    source/vsftpd
-    source/samba
-    source/logrotate
-    source/time
-    source/sphinx
-    source/firewalld
-
-.. toctree::
-    :maxdepth: 1
-    :caption: 开发
-
-    source/nginx   
-    source/git
-    source/php
-    source/security   
-    source/mysql
-    source/oracle
-    source/sqlserver
-    source/docker
-    source/kubernetes
-    source/elk
-    source/supervisor
-    source/vagrant
-    source/go
-    source/regex
-    source/testing
-
-.. toctree::
-    :maxdepth: 1
-    :caption: 编辑器
-
-    source/sublime
-    source/vim
-    source/vscode
+    source/system/index
+    source/develop/index
+    source/editor/index
 
     
 table模板

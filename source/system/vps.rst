@@ -83,9 +83,9 @@ linux服务器
 windows客户端
 ^^^^^^^^^^^^^
 
-安装：直接下载windows版本，并解压到相应目录`https://github.com/v2ray/v2ray-core/releases <https://github.com/v2ray/v2ray-core/releases>`_
+安装：直接下载windows版本，并解压到相应目录 `https://github.com/v2ray/v2ray-core/releases <https://github.com/v2ray/v2ray-core/releases>`_
 
-域名文件：下载h2y.dat数据文件到v2ray根目录`https://github.com/ToutyRater/V2Ray-SiteDAT <https://github.com/ToutyRater/V2Ray-SiteDAT>`_
+域名文件：下载h2y.dat数据文件到v2ray根目录 `https://github.com/ToutyRater/V2Ray-SiteDAT <https://github.com/ToutyRater/V2Ray-SiteDAT>`_
 
 修改config.json配置文件：
 
