@@ -64,7 +64,7 @@ windows开发
 nginx配置
 ---------
 
-.. code-block:: nginx
+.. code-block:: bash
 
     server {
         listen 80;

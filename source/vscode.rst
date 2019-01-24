@@ -9,22 +9,19 @@ settings
 
 .. code-block:: json
 
-    /* 工作台 */
-    "workbench.colorTheme": "LAZY",
+    {
+        "workbench.colorTheme": "LAZY",
 
-    /* 编辑器 */
-    "editor.fontSize": 20,
-    "editor.minimap.enabled": false,
+        "editor.fontSize": 20,
+        "editor.minimap.enabled": false,
 
-    /* 文件属性 */
-    "files.eol": "\n",
-    "files.encoding": "utf8",
+        "files.eol": "\n",
+        "files.encoding": "utf8",
 
-    /* 终端 */
-    "terminal.integrated.shell.windows": "D:/Program Files/Git/bin/bash.exe",
+        "terminal.integrated.shell.windows": "D:/Program Files/Git/bin/bash.exe",
 
-    /* go插件 */
-    "go.formatFlags": ["-d"], //禁用保存时自动格式化
+        "go.formatFlags": ["-d"], 
+    }
     
 插件
 ----
