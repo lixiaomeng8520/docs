@@ -42,6 +42,7 @@ Kubernetes
 * `使用Filebeat收集Kubernetes的应用日志 <https://www.kubernetes.org.cn/2011.html>`_
 * `How To Setup Prometheus Monitoring On Kubernetes Cluster <https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/>`_
 * `Get Kubernetes Cluster Metrics with Prometheus in 5 Minutes <https://akomljen.com/get-kubernetes-cluster-metrics-with-prometheus-in-5-minutes/>`_
+* `DCOS之k8s的容器监测探针 <https://blog.csdn.net/zouyee/article/details/50755608>`_
 
 安装
 ----
