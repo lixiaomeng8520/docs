@@ -14,6 +14,7 @@ http://blog.51cto.com/xiaogongju/2084464
     :maxdepth: 1
     :caption: 系统
 
+    source/vps
     source/network
     source/linux
     source/installCentos7
