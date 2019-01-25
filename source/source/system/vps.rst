@@ -31,7 +31,7 @@ linux服务器
         "settings": {
           "clients": [
             {
-              "id": "0a53a251-0032-4ec6-a667-840274ec33e7",
+              "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
               "level": 1,
               "alterId": 64
             }
@@ -99,7 +99,7 @@ windows客户端
         },
         "inbounds": [
             {
-                "port": 1080,
+                "port": 1085,
                 "protocol": "socks",
                 "domainOverride": ["tls", "http"],
                 "settings": {
@@ -121,11 +121,11 @@ windows客户端
                 "settings": {
                     "vnext": [
                         {
-                            "address": "45.77.181.151",
+                            "address": "xxx.xxx.xxx.xxx",
                             "port": 55555,
                             "users": [
                                 {
-                                    "id": "0a53a251-0032-4ec6-a667-840274ec33e7",
+                                    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
                                     "alterId": 64
                                 }
                             ]
