@@ -89,6 +89,12 @@ windows客户端
 
 修改config.json配置文件：
 
+.. note::
+
+    1. 设置默认出站策略为直连，路由中将不可访问地址通过代理。
+    2. 添加两个入站协议，socks和http，可以根据情况来连。
+    3. 默认认证都为noauth。
+
 .. code-block:: json
 
     {
@@ -103,9 +109,13 @@ windows客户端
                 "protocol": "socks",
                 "domainOverride": ["tls", "http"],
                 "settings": {
-                    "auth": "noauth",
                     "udp": true
                 }
+            },
+            {
+                "port": 1086,
+                "protocol": "http",
+                "domainOverride": ["tls", "http"]
             }
         ],
         "outbounds": [
