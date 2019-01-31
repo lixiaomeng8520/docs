@@ -7,3 +7,4 @@
     sublime
     vscode
     vim
+    phpstorm
