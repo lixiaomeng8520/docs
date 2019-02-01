@@ -1,0 +1,69 @@
+{
+    "log": {
+        "loglevel": "warning",
+        "access": "",
+        "error": ""
+    },
+    "inbounds": [
+        {
+            "port": 1085,
+            "protocol": "socks",
+            "domainOverride": ["tls", "http"],
+            "settings": {
+                "udp": true
+            }
+        },
+        {
+            "port": 1086,
+            "protocol": "http",
+            "domainOverride": ["tls", "http"]
+        }
+    ],
+    "outbounds": [
+        {
+            "tag": "proxy",
+            "protocol": "vmess",
+            "mux": { "enabled": true },
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "149.28.248.251",
+                        "port": 55555,
+                        "users": [
+                            {
+                                "id": "b6746bf6-546b-4125-9a40-1fbb9458462c",
+                                "alterId": 64
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "tag": "direct",
+            "protocol": "freedom",
+            "settings": {}
+        }
+    ],
+    "routing": {
+        "domainStrategy": "IPOnDemand",
+        "rules": [
+            {
+                "type": "field",
+                "outboundTag": "direct",
+                "ip": [
+                    "127.0.0.1",
+                    "10.10.10.0/24",
+                    "192.168.0.0/16"
+                ]
+            }
+            // {
+            //     "type": "field",
+            //     "outboundTag": "proxy",
+            //     "domain": [
+            //         "ext:h2y.dat:gfw"
+            //     ]
+            // }
+        ]
+    }
+}
