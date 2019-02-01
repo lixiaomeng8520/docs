@@ -50,11 +50,17 @@
         "rules": [
             {
                 "type": "field",
+                "outboundTag": "proxy",
+                "domain": [
+                    "google.com"
+                ]
+            },
+            {
+                "type": "field",
                 "outboundTag": "direct",
                 "ip": [
-                    "127.0.0.1",
-                    "10.10.10.0/24",
-                    "192.168.0.0/16"
+                    "ext:geoip.dat:private",
+                    "ext:geoip.dat:cn"
                 ]
             }
             // {
