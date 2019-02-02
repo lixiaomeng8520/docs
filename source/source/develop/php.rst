@@ -13,6 +13,8 @@ PHP
 * `Slim <https://www.slimframework.com/>`_
 * `REST API Handbook <https://developer.wordpress.org/rest-api/>`_
 * `PSR中文翻译 <https://laravel-china.org/docs/psr>`_
+* `The League of Extraordinary Packages <https://github.com/thephpleague>`_
+* `Zend Framework <https://github.com/zendframework>`_
 
 知识点
 ------
