@@ -16,3 +16,4 @@
     time
     sphinx
     firewalld
+    windows

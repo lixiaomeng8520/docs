@@ -9,3 +9,4 @@ PHPStorm
 * 代理
 * 编码
 * ssh客户端
+* 本地默认terminal改为gitbash
