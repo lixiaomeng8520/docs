@@ -5,11 +5,7 @@ lxm的文档
 
 https://stackoverflow.com/questions/13348480/how-to-upload-file-from-command-line-as-file-parameter-in-jenkins
 
-2019年过年假期任务
-
-1. php-fig通读。
-2. zend framework 3过一遍。
-
+aida64序列号：FKUR4-C3LD6-UCD59-2D8E4-UYD32
 
 杂项
 ----
