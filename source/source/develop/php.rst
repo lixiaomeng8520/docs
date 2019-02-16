@@ -21,6 +21,8 @@ PHP
 
 * `​PHP 7 错误处理​ <http://php.net/manual/zh/language.errors.php7.php>`_
 * `PSR-7 Objects Are Not Immutable <http://andrew.carterlunn.co.uk/programming/2016/05/22/psr-7-is-not-immutable.html>`_
+* `PHP 的异常处理、错误处理:error_reporting,try-catch,trigger_error,set_error_handler,set_exception_handler,regis <https://blog.csdn.net/aerchi/article/details/37757751>`_
+* `再谈PHP错误与异常处理 <https://www.cnblogs.com/zyf-zhaoyafei/p/6928149.html>`_
   
 Packagist常用软件包
 -------------------
@@ -46,12 +48,19 @@ Packagist常用软件包
 +-------------------------------+--------------------------------------+
 | squizlabs\/php_codesniffer    | PHP代码规范校验（开发工具）          |
 +-------------------------------+--------------------------------------+
-| nesbot/carbon                 | DateTime                             |
+| nesbot\/carbon                | DateTime                             |
 +-------------------------------+--------------------------------------+
 |                               |                                      |
 +-------------------------------+--------------------------------------+
 |                               |                                      |
 +-------------------------------+--------------------------------------+
+
+* zendframework/zend-diactoros
+* nikic/fast-route
+* pimple/pimple
+* hassankhan/config
+* relay/relay
+
 
 安装
 ----
