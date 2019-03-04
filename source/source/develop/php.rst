@@ -60,6 +60,7 @@ Packagist常用软件包
 * pimple/pimple
 * hassankhan/config
 * relay/relay
+* filp/whoops
 
 
 安装
