@@ -37,6 +37,16 @@
                         ]
                     }
                 ]
+            },
+            "streamSettings": {
+                "network": "mkcp",
+                "kcpSettings": {
+                    "uplinkCapacity": 20,
+                    "downlinkCapacity": 20,
+                    "congestion": true,
+                    "readBufferSize": 10,
+                    "writeBufferSize": 10
+                }
             }
         },
         {
@@ -50,26 +60,12 @@
         "rules": [
             {
                 "type": "field",
-                "outboundTag": "proxy",
-                "domain": [
-                    "google.com"
-                ]
-            },
-            {
-                "type": "field",
                 "outboundTag": "direct",
                 "ip": [
                     "ext:geoip.dat:private",
                     "ext:geoip.dat:cn"
                 ]
             }
-            // {
-            //     "type": "field",
-            //     "outboundTag": "proxy",
-            //     "domain": [
-            //         "ext:h2y.dat:gfw"
-            //     ]
-            // }
         ]
     }
 }
