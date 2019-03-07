@@ -60,6 +60,13 @@
         "rules": [
             {
                 "type": "field",
+                "outboundTag": "proxy",
+                "domain": [
+                    "google.com"
+                ]
+            },
+            {
+                "type": "field",
                 "outboundTag": "direct",
                 "ip": [
                     "ext:geoip.dat:private",
