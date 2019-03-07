@@ -7,6 +7,7 @@ v2ray
 * `github <https://github.com/v2ray/v2ray-core>`_
 * `官网 <https://www.v2ray.com/>`_
 * `白话文 <https://toutyrater.github.io/>`_
+* `CentOS7 开启Google BBR加速 让你的VPS更快 <https://laod.cn/black-technology/centos7-google-bbr-vps.html>`_
 
 linux服务器
 ^^^^^^^^^^^
