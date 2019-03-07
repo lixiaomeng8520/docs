@@ -37,6 +37,16 @@ linux服务器
               "alterId": 64
             }
           ]
+        },
+        "streamSettings": {
+          "network": "mkcp",
+          "kcpSettings": {
+            "uplinkCapacity": 20,
+            "downlinkCapacity": 20,
+            "congestion": true,
+            "readBufferSize": 10,
+            "writeBufferSize": 10
+          }
         }
       }],
       "outbounds": [{
