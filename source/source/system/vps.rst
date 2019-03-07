@@ -8,6 +8,7 @@ v2ray
 * `官网 <https://www.v2ray.com/>`_
 * `白话文 <https://toutyrater.github.io/>`_
 * `CentOS7 开启Google BBR加速 让你的VPS更快 <https://laod.cn/black-technology/centos7-google-bbr-vps.html>`_
+* `bbr暴力魔改 <https://github.com/tcp-nanqinlang/general>`_
 
 linux服务器
 ^^^^^^^^^^^
@@ -98,75 +99,13 @@ windows客户端
 
 域名文件：下载h2y.dat数据文件到v2ray根目录 `https://github.com/ToutyRater/V2Ray-SiteDAT <https://github.com/ToutyRater/V2Ray-SiteDAT>`_
 
-修改config.json配置文件：
+修改config.json配置文件，在scripts目录下：
 
 .. note::
 
     1. 设置默认出站策略为直连，路由中将不可访问地址通过代理。
     2. 添加两个入站协议，socks和http，可以根据情况来连。
     3. 默认认证都为noauth。
-
-.. code-block:: json
-
-    {
-        "log": {
-            "loglevel": "warning",
-            "access": "",
-            "error": ""
-        },
-        "inbounds": [
-            {
-                "port": 1085,
-                "protocol": "socks",
-                "domainOverride": ["tls", "http"],
-                "settings": {
-                    "udp": true
-                }
-            },
-            {
-                "port": 1086,
-                "protocol": "http",
-                "domainOverride": ["tls", "http"]
-            }
-        ],
-        "outbounds": [
-            {
-                "tag": "direct",
-                "protocol": "freedom",
-                "settings": {}
-            },
-            {
-                "tag": "proxy",
-                "protocol": "vmess",
-                "mux": { "enabled": true },
-                "settings": {
-                    "vnext": [
-                        {
-                            "address": "xxx.xxx.xxx.xxx",
-                            "port": 55555,
-                            "users": [
-                                {
-                                    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                                    "alterId": 64
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPOnDemand",
-            "rules": [
-                {
-                    "type": "field",
-                    "outboundTag": "proxy",
-                    "domain": [
-                        "ext:h2y.dat:gfw"
-                    ]
-                }
-            ]
-        }
-    }
+    4. 底层使用kcp协议。
 
 启动：进入v2ray目录，执行 ``./v2ray.exe``
