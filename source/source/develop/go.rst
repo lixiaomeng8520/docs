@@ -60,3 +60,7 @@ vscode插件
     go get -v github.com/derekparker/delve/cmd/dlv
     go get -v github.com/rogpeppe/godef
 
+YouTube golang学习
+------------------
+
+map

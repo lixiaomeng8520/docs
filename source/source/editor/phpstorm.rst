@@ -11,7 +11,7 @@ PHPStorm
 * 编码
 * ssh客户端
 * 本地默认terminal改为gitbash
-* hits, 取消参数提醒
+* hints, 取消参数提醒
 * 根据sublime lazy主题自定义颜色
 * color schema -> general -> editor -> caret row, 当前行背景色
 * color schema -> general -> code -> identifier under caret, 鼠标放上去同一个变量背景色
