@@ -73,3 +73,17 @@ NOTE
 3. 传参是新建一个变量，然后将老变量的值赋给新变量。
 4. 传参时，一定要记住，这时候有两个变量，或者说变量符号。
 5. 传参是，所以如果这个值是个地址，那么通过*p是可以操作老变量的。但是如果给新变量重新赋值了，这时是不影响老变量的。
+
+HTTP Server原理
+---------------
+
+l.Accept()和conn.Read()会阻塞。
+
+1. 主线程监听
+2. l.Accept到连接，创建一个goroutine，进行处理。
+3. c.serve方法里有一个for循环，是keep-alive的实现，及tcp连接不释放，供下次连接使用，这里指还是同一个客户端。（出错，超时或没有配置keep-alive时，会进行释放）
+4. for循环里读取请求内容，这里用bufio。
+5. 协议头和headers会读取完毕
+6. 剩下body不读（bufio和conn里可能会同时存在body内容），但会将bufio做成一个长度是Content-length的limitReader，可以使用EOF。一个连接不释放，是不会有EOF的。
+7. serverHandler里对body进行读取。
+8. 不管读没读完，在w.finishRequest()里会将所有内容全部丢弃，等待下次请求。我理解主要是为了将conn里的内容读完，因为如果不读完，下一个for循环就不会阻塞。
