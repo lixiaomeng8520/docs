@@ -19,6 +19,9 @@ config
     [https]
         proxy = https://xxx.xxx.xxx.xxx:xxxx
         # proxy = socks5://192.168.56.2:1080
+    [core]
+        filemode = false # 不同步权限，有时候文件在不同系统内编辑后，权限也变了。造成内容没改变，却提示更改。
+        autocrlf = false # 检出检入都不转换。 input和true 都在提交时替换为lf, 前者检出不改变，后者检出替换为crlf。
 
 remote
 ------
