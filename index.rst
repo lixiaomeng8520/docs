@@ -15,6 +15,7 @@ aida64序列号：FKUR4-C3LD6-UCD59-2D8E4-UYD32
 * `win10开机自动打开上次未关闭的窗口? <https://answers.microsoft.com/zh-hans/windows/forum/windows_10-files/win10%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%89%93/a278b709-ab05-4542-88a9-43c6e808049f>`_
 * `Gihosoft TubeGet <http://www.gihosoft.com/free-youtube-downloader.html>`_
 * `好维持-虚拟信息生成 <http://www.haoweichi.com/>`_
+* `花生壳3使用教程（PC端） <http://service.oray.com/question/2480.html>`_
 
 
 目录

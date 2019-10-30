@@ -19,3 +19,5 @@
     go
     regex
     testing
+    webpack
+    ansible

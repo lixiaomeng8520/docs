@@ -92,3 +92,7 @@ nginx配置
             try_files 
         }
     }
+
+NOTE
+
+1. 当preg_replace返回null时，可以先查看preg_last_error()，如果返回是2，就调大php.ini中backtrack_limit的数值，-1为不受限制。

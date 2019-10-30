@@ -2,6 +2,7 @@ PHPStorm
 ========
 
 * `IntelliJ IDEA 最新注册码（截止到2019年5月4日） <https://blog.csdn.net/qq_35246620/article/details/80522720>`_
+* `IntelliJ IDEA 最新注册码（截止到2020年3月11日） <https://guobinhit.blog.csdn.net/article/details/89040919>`_
 * `JetBrains PhpStorm 所有版本通用注册码 <https://9iphp.com/web/php/jetbrains-phpstorm-all-editions-universal-license-keys-collection.html>`_
 * `在phpstorm上安装代码规范检查工具 <https://blog.csdn.net/seven_2016/article/details/76093609>`_
   
