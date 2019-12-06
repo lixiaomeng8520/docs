@@ -17,3 +17,4 @@
     sphinx
     firewalld
     windows
+    ulimit

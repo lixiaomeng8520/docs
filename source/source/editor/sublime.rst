@@ -1,6 +1,16 @@
 Sublime
 =======
 
+配置
+----
+
+.. code-block:: bash
+
+    "color_scheme": "Packages/Color Scheme - Legacy/LAZY.tmTheme",
+    "font_size": 15,
+    "line_padding_bottom": 1,
+    "translate_tabs_to_spaces": true
+
 插件
 ----
 
