@@ -21,3 +21,5 @@
     testing
     webpack
     ansible
+    https
+    im

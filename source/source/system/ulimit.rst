@@ -24,7 +24,7 @@ Ulimit
 
 修改打开文件数，编辑/etc/security/limits.conf，添加或修改如下参数（ubuntu系统需要将*替换为root）
 
-·· code-block:: bash
+.. code-block:: bash
 
     * soft nproc 1000000
     * hard nproc 1000000
